@@ -7,7 +7,7 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ action: 'show' }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-circle-info"></i>
+  <%= svg_tag 'circle-info', class: 'icon text-info' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ controller: 'rooms', station_id: model.id }, class: 'cell has-column-centered') do %>
