@@ -1,5 +1,5 @@
 <%= button_to({ action: 'edit', id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-pencil"></i>
+  <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= button_to({ action: 'destroy', id: model.id }, method: :delete, class: 'text-danger', form: { turbo_confirm: t('.destroy.confirm') }, class: 'cell has-column-centered') do %>
