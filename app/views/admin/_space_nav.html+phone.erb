@@ -5,13 +5,13 @@
   <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
     <%= link_to({ controller: 'space/admin/stations' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <i class="fa-solid fa-fw fa-xl fa-building"></i>
+        <%= svg_tag 'building' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('space.admin.stations.index.title') %></div>
     <% end %>
     <%= link_to({ controller: 'space/admin/desks', action: 'all' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <i class="fa-solid fa-fw fa-xl fa-chair"></i>
+        <%= svg_tag 'chair' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('space.admin.desks.all.title') %></div>
     <% end %>
