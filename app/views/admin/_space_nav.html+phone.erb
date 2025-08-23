@@ -2,16 +2,16 @@
   <div class="box-body">
     <span class="size-7 has-border-left-primary"><%= t('space.admin.title') %></span>
   </div>
-  <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
+  <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow">
     <%= link_to({ controller: 'space/admin/stations' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <%= svg_tag 'building' %>
+        <%= svg_tag 'building', class: 'icon is-medium' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('space.admin.stations.index.title') %></div>
     <% end %>
     <%= link_to({ controller: 'space/admin/desks', action: 'all' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <%= svg_tag 'chair' %>
+        <%= svg_tag 'chair', class: 'icon is-medium' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('space.admin.desks.all.title') %></div>
     <% end %>
