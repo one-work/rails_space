@@ -15,12 +15,12 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= link_to({ controller: 'grids', room_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-grip-lines text-info"></i>
-      <span class="pl-1"><%= t('.grids.index.title') %></span>
+      <%= svg_tag 'grip-lines' %>
+      <span class="ml-1"><%= t('.grids.index.title') %></span>
     <% end %>
     <%= link_to({ controller: 'desks', room_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-couch text-success"></i>
-      <span class="pl-1"><%= t('.desks.index.title') %></span>
+      <%= svg_tag 'couch' %>
+      <span class="ml-1"><%= t('.desks.index.title') %></span>
     <% end %>
   </div>
 </td>

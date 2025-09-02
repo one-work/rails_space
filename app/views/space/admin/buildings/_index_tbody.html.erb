@@ -14,8 +14,8 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= link_to({ controller: 'rooms', station_id: model.station_id, building_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-shop text-info"></i>
-      <span class="pl-1"><%= t('.rooms.index.title') %></span>
+      <%= svg_tag 'shop' %>
+      <span class="ml-1"><%= t('.rooms.index.title') %></span>
     <% end %>
   </div>
 </td>
