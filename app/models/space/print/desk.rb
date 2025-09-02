@@ -52,7 +52,7 @@ module Space
 
     def to_cpcl(cpcl)
       cpcl.text code
-      cpcl.right_qrcode(product_url)
+      cpcl.qrcode_right(product_url)
       cpcl.render
     end
 
