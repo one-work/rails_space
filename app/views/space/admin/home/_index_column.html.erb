@@ -1,10 +1,11 @@
-<div class="fixed-grid has-6-cols">
-  <div class="grid">
-    <%= link_to({ controller: 'space/admin/stations' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['stations', 'buildings', 'rooms', 'grids'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
-      <span><%= t('space.admin.stations.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'space/admin/desks', action: 'all' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('space.admin.desks.all.title') %></span>
-    <% end %>
-  </div>
+<div class="grid">
+  <%= link_to({ controller: 'space/admin/stations' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['stations', 'buildings', 'rooms', 'grids'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('space.admin.stations.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'space/admin/desks', action: 'all' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('space.admin.desks.all.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'space/admin/rooms', action: 'all' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('space.admin.rooms.all.title') %></span>
+  <% end %>
 </div>

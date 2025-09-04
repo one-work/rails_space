@@ -45,6 +45,11 @@ Rails.application.routes.draw do
             end
           end
         end
+        resources :rooms, only: [] do
+          collection do
+            get :all
+          end
+        end
         resources :desks, only: [] do
           collection do
             get :all
