@@ -11,7 +11,7 @@
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ controller: 'desks', room_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-couch text-success"></i>
+  <%= svg_tag 'couch' %>
   <span><%= t('space.admin.desks.index.title') %></span>
 <% end %>
 <div
