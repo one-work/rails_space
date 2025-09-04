@@ -1,11 +1,11 @@
 <%= render 'filter_bar' %>
 <%= render 'filter_table' %>
 
-<%= render layout: 'index_list' do %>
-  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @desks, as: :model %>
+<%= render 'index_list' do %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @rooms, as: :model %>
 <% end %>
 
-<%= paginate @desks %>
+<%= paginate @rooms %>
 
 <div
   data-controller="mask"

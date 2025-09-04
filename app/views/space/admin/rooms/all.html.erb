@@ -1,0 +1,9 @@
+<%= render 'index_bar' %>
+
+<div class="cards is-4">
+  <%= render partial: 'index_column', collection: @rooms, as: :model %>
+</div>
+
+<%= turbo_stream_from "room_count_#{current_organ.id}" %>
+
+<%= paginate @rooms %>

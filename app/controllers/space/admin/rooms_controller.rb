@@ -1,11 +1,16 @@
 module Space
   class Admin::RoomsController < Admin::BaseController
-    before_action :set_station
+    before_action :set_station, except: [:all]
     before_action :set_room, only: [:show, :edit, :update, :destroy, :actions, :print_data]
     before_action :set_new_room, only: [:new, :create]
 
     def index
       @rooms = @station.rooms.page(params[:page])
+    end
+
+    def all
+      @station = Station.default_where(default_params).first || Station.create(default_params)
+      @rooms = Room.default_where(default_params).page(params[:page])
     end
 
     def print_data

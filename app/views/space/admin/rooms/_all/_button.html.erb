@@ -1,0 +1,4 @@
+<%= button_to({ action: 'new', station_id: @station.id }, class: 'button is-rounded is-primary') do %>
+  <%= svg_tag 'plus' %>
+  <span class="ml-1"><%= t('.new.title') %></span>
+<% end %>
