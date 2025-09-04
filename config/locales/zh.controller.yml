@@ -18,6 +18,8 @@ zh:
       rooms:
         index:
           title: 房间
+        all:
+          title: 房间
         print_data:
           title: 打印
       grids:
