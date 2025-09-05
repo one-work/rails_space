@@ -9,6 +9,9 @@ module Space
     end
 
     def all
+      station = Station.default_where(default_params).first || Station.create(default_params)
+      @room = Room.default_where(default_params).first || Room.create(station_id: station.id, **default_params)
+
       @desks = Desk.default_where(default_params).page(params[:page])
       @item_hash = Trade::Item.default_where(default_params).where.not(desk_id: nil).carting.group(:desk_id).count
       @ordered_hash = Trade::Item.default_where(default_params).where.not(desk_id: nil).status_ordered.group(:desk_id).count

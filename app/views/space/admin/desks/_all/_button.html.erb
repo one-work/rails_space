@@ -1,0 +1,4 @@
+<%= button_to({ action: 'new', room_id: @room.id, station_id: @room.station_id }, class: 'button is-fullwidth is-primary mx-0', form: { class: 'is-fullwidth' }) do %>
+  <%= svg_tag 'plus' %>
+  <span class="ml-1"><%= t('.new.title') %></span>
+<% end %>
