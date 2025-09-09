@@ -24,7 +24,7 @@ module Space
     def to_esc(pr)
       total = 0
 
-      pr.big_text "#{organ.name}"
+      pr.text_big "#{organ.name}"
       pr.break_line
       pr.text "#{self.class.human_attribute_name(:name)}：#{name}"
       pr.text '已下单：'
