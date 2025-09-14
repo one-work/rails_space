@@ -9,3 +9,5 @@ light:
   - print
   - shop
   - trash
+regular:
+  - angle-left
