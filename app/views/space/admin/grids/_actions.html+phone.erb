@@ -2,7 +2,7 @@
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
-<%= button_to({ action: 'destroy', id: model.id }, method: :delete, class: 'text-danger', form: { turbo_confirm: t('.destroy.confirm') }, class: 'cell has-column-centered') do %>
+<%= button_to({ action: 'destroy', id: model.id }, method: :delete, form: { turbo_confirm: t('.destroy.confirm') }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'trash' %>
   <span><%= t('.destroy.title') %></span>
 <% end %>

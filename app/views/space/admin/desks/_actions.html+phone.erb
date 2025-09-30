@@ -7,7 +7,7 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ action: 'show' }, class: 'cell has-column-centered') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+  <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <% if request.variant.include?(:mini_program) %>
