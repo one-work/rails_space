@@ -20,11 +20,11 @@
     class="button is-info"
   >
     <%= svg_tag 'print' %>
-    <span class="ml-1">打印编码</span>
+    <span>打印编码</span>
   </button>
 <% else %>
   <%= button_to({ action: 'print' }, class: 'cell has-column-centered', form: { data: { action: 'click->weui-actionsheet#close' } }) do %>
     <%= svg_tag 'print' %>
-    <span class="ml-1"><%= t('space.admin.desks.print.title') %></span>
+    <span><%= t('space.admin.desks.print.title') %></span>
   <% end %>
 <% end %>
