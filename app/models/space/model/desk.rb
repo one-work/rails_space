@@ -64,7 +64,10 @@ module Space
         title: "#{organ.name} 提前下单：#{content}"
       }
       if organ.share_logo.attached?
-        r.merge! share_logo: organ.share_logo_url
+        r.merge!(
+          share_logo: organ.share_logo_url,
+          debug: organ.debug_enabled
+        )
       end
     end
 
