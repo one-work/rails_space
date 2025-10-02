@@ -58,5 +58,15 @@ module Space
       QrcodeHelper.data_url(product_url)
     end
 
+    def share_info
+      r = {
+        url: product_url,
+        title: organ.name
+      }
+      if organ.share_logo.attached?
+        r.merge! share_logo: organ.share_logo.url
+      end
+    end
+
   end
 end

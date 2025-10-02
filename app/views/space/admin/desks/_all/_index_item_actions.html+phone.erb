@@ -14,12 +14,12 @@
         data-controller="mini-program"
         data-mini-program-nav-value="true"
         data-mini-program-url-value="/pages/share/index"
-        data-mini-program-data-value="<%= { url: url_for(controller: 'factory/productions', desk_id: model.id, host: current_organ.host) }.to_json %>"
+        data-mini-program-data-value="<%= model.share_info.to_json %>"
         data-action="click->mini-program#link"
         class="button is-warning"
       >
-        <%= svg_tag 'share' %>
-        <span class="size-7 text-grey mt-1">分享</span>
+        <%= svg_tag 'share', class: 'icon' %>
+        <span class="text-grey mt-1">分享</span>
       </div>
     <% else %>
       <div
