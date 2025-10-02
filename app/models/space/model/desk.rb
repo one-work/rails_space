@@ -61,7 +61,7 @@ module Space
     def share_info
       r = {
         url: product_url,
-        title: organ.name
+        title: "#{organ.name} 提前下单：#{content}"
       }
       if organ.share_logo.attached?
         r.merge! share_logo: organ.share_logo.url
