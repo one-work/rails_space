@@ -2,12 +2,16 @@
   <div class="media-content">
     <%= yield %>
   </div>
-  <div class="media-right">
+  <div class="media-right as-centered">
     <%= link_to({ controller: 'factory/agent/productions', desk_id: model.id }, class: 'button is-success') do %>
       <span>点餐</span>
     <% end %>
-    <%= link_to({ controller: 'trade/admin/desk/orders', desk_id: model.id }, class: 'button is-info') do %>
-      <span>查看订单</span>
+    <%= link_to({ controller: 'trade/admin/desk/orders', desk_id: model.id }, class: 'button is-info flex-direction-column') do %>
+      <p class="size-7">查看订单</p>
+      <p class="size-7 text-grey">
+        <span>待收款：</span>
+        <span><%= model.counters['unreceived_amount'].to_money.format.html_safe %></span>
+      </p>
     <% end %>
     <%= button_to({ action: 'actions', id: model.id, station_id: model.room.station_id, room_id: model.room_id }, class: 'button is-borderless') do %>
       <%= svg_tag 'ellipsis-vertical' %>
