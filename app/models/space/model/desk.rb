@@ -8,6 +8,7 @@ module Space
       attribute :width, :integer
       attribute :height, :integer
       attribute :length, :integer
+      attribute :counters, :json, default: {}
 
       belongs_to :room
       belongs_to :organ, class_name: 'Org::Organ', optional: true

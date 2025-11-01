@@ -1,0 +1,1 @@
+Desk = Space::Desk unless defined? Desk
