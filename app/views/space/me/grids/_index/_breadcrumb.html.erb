@@ -1,9 +1,5 @@
-<div class="breadcrumb has-succeeds-separator">
-  <ul>
-    <li><%= link_to t('space.admin.stations.index.title'), { controller: 'stations' } %></li>
-    <li><span class="px-3"><%= @room.station.name %></span></li>
-    <li><%= link_to t('space.admin.rooms.index.title'), { controller: 'rooms' } %></li>
-    <li><span class="px-3"><%= @room.name %></span></li>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<li><%= link_to t('space.admin.stations.index.title'), { controller: 'stations' } %></li>
+<li><span class="px-3"><%= @room.station.name %></span></li>
+<li><%= link_to t('space.admin.rooms.index.title'), { controller: 'rooms' } %></li>
+<li><span class="px-3"><%= @room.name %></span></li>
+<li class="is-active"><%= t('.title') %></li>
