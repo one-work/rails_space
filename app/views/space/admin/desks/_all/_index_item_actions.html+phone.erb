@@ -7,9 +7,8 @@
       <span>点餐</span>
     <% end %>
     <%= link_to({ controller: 'trade/admin/desk/orders', desk_id: model.id }, class: 'button is-info flex-direction-column') do %>
-      <p class="size-7">查看订单</p>
-      <p class="size-7 text-grey">
-        <span>待收款：</span>
+      <p>
+        <span>待结算：</span>
         <span><%= model.counters['unreceived_amount'].to_money.format.html_safe %></span>
       </p>
     <% end %>
