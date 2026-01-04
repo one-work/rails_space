@@ -25,7 +25,7 @@ module Space
     end
 
     def qrcode_url
-      QrcodeHelper.data_url(qr_code)
+      QrcodeUtil.data_url(qr_code)
     end
 
     def enter_url
@@ -33,7 +33,7 @@ module Space
     end
 
     def qrcode_enter_url
-      QrcodeHelper.data_url(enter_url)
+      QrcodeUtil.data_url(enter_url)
     end
 
   end
