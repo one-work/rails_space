@@ -1,0 +1,10 @@
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'rooms', station_id: model.station_id, building_id: model.id),
+      icon: 'shop',
+      title: t('.rooms.index.title')
+    }
+  ) { yield }
+%>
