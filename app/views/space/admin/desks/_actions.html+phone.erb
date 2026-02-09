@@ -17,7 +17,7 @@
     data-mini-program-url-value="/pages/print/index"
     data-mini-program-data-value="<%=
       {
-        url: url_for(action: 'print_data', id: @desk.id, auth_token: Current.session.id, only_path: false),
+        url: url_for(action: 'print_data', id: @desk.id, auth_token: Current.session.once_token, only_path: false),
         device: current_organ.bluetooth_device
       }.to_json
     %>"
