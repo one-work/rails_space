@@ -35,7 +35,7 @@ module Space
     end
 
     def enter_url
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'space/desks',
         action: 'qrcode',
         id: id,
@@ -48,7 +48,7 @@ module Space
     end
 
     def product_url
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'factory/productions',
         desk_id: id,
         host: room.station.organ.host

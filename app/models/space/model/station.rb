@@ -25,7 +25,7 @@ module Space
     end
 
     def product_url
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'factory/productions',
         station_id: id,
         host: organ.host
