@@ -6,10 +6,10 @@ module Space
       belongs_to :desk, class_name: 'Space::Desk', optional: true
       belongs_to :station, class_name: 'Space::Station', optional: true
 
-      has_many :desk_brothers, ->(o) { where(desk_id: o.desk_id) }, class_name: self.name, primary_key: :organ_id, foreign_key: :organ_id
+      has_many :desk_brothers, class_name: self.name, primary_key: [:organ_id, :desk_id], foreign_key: [:organ_id, :desk_id]
 
-      after_update_commit :send_notice_to_desk_ordered, if: -> { saved_change_to_order_id? && ['ordered'].include?(status) }
-      after_commit :send_notice_to_desk, on: [:create, :destroy]
+      after_update_commit :send_notice_to_desk_ordered, if: -> { desk && saved_change_to_order_id? && ['ordered'].include?(status) }
+      after_commit :send_notice_to_desk, on: [:create, :destroy], if: -> { desk }
     end
 
     def send_notice_to_desk_ordered
