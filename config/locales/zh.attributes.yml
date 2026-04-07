@@ -7,3 +7,22 @@ zh:
         locations_count: 车站数
       space/desk:
         name: 桌台
+        enter_url: 访问链接
+        width: 宽度
+        length: 长度
+        height: 高度
+      space/station:
+        area_id: 所属区域
+        detail: 站点详情
+        buildings_count: 楼宇数
+        rooms_count: 房间数
+        qrcode_product_url: 产品链接二维码
+      space/room:
+        floor: 楼层
+        enter_url: 访问链接
+      space/grid:
+        width: 宽度
+        length: 长度
+        height: 高度
+        floor: 层数
+        enter_url: 访问链接
