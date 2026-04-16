@@ -8,7 +8,7 @@ module Space
 
     def print
       if organ&.receipt_printer
-        organ.receipt_printer.printer.print do |pr|
+        organ.receipt_printer.print(to_gid) do |pr|
           to_esc(pr)
         end
       end
@@ -16,7 +16,7 @@ module Space
 
     def print_all
       return unless organ.receipt_printer
-      organ.receipt_printer.printer.print do |pr|
+      organ.receipt_printer.print(to_gid) do |pr|
         to_esc(pr)
       end
     end
