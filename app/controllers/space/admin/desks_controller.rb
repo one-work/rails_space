@@ -1,7 +1,7 @@
 module Space
   class Admin::DesksController < Admin::BaseController
     before_action :set_room, except: [:all]
-    before_action :set_desk, only: [:show, :edit, :update, :destroy, :actions, :print, :print_data, :print_all]
+    before_action :set_desk, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_desk, only: [:new, :create]
 
     def index
@@ -15,18 +15,6 @@ module Space
       @desks = Desk.default_where(default_params).page(params[:page])
       @item_hash = Trade::Item.default_where(default_params).where.not(desk_id: nil).carting.group(:desk_id).count
       @ordered_hash = Trade::Item.default_where(default_params).where.not(desk_id: nil).status_ordered.group(:desk_id).count
-    end
-
-    def print
-      @desk.print
-    end
-
-    def print_data
-      render json: @desk.to_cpcl.bytes
-    end
-
-    def print_all
-      @desk.print_all
     end
 
     private

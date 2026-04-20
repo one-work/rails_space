@@ -2,18 +2,6 @@ module Space
   module Print::Desk
     extend ActiveSupport::Concern
 
-    included do
-
-    end
-
-    def print
-      if organ&.receipt_printer
-        organ.receipt_printer.print(to_gid) do |pr|
-          to_esc(pr)
-        end
-      end
-    end
-
     def to_esc(pr)
       total = 0
 
