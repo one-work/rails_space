@@ -9,6 +9,7 @@ module Space
     def print
       if organ&.receipt_printer
         organ.receipt_printer.print(to_gid) do |pr|
+          binding.b
           to_esc(pr)
         end
       end
@@ -31,8 +32,6 @@ module Space
       pr.text "感谢您的惠顾！"
       pr.text "订餐电话：#{'0717-6788808'}"
       pr.text "#{Time.current.to_fs(:wechat)}"
-      pr.render
-      pr
     end
 
     def to_tspl(ts)
@@ -40,13 +39,11 @@ module Space
       ts.qrcode(product_url, x: 20, y: 10, cell_width: 10)
       ts.text(name, x: 320, scale: 2)
       ts.middle_text('扫码点餐', x: 320)
-      ts.render
     end
 
     def to_cpcl(cpcl)
       cpcl.text code
       cpcl.qrcode_right(product_url)
-      cpcl.render
     end
 
   end
