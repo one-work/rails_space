@@ -9,7 +9,6 @@ module Space
     def print
       if organ&.receipt_printer
         organ.receipt_printer.print(to_gid) do |pr|
-          binding.b
           to_esc(pr)
         end
       end
