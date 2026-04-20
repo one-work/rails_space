@@ -14,13 +14,6 @@ module Space
       end
     end
 
-    def print_all
-      return unless organ.receipt_printer
-      organ.receipt_printer.print(to_gid) do |pr|
-        to_esc(pr)
-      end
-    end
-
     def to_esc(pr)
       total = 0
 
