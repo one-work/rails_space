@@ -10,9 +10,9 @@
   <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= button_to({ controller: 'print/api/tasks', action: 'inner' }, params: { gid: @desk.to_gid.to_s, aim: 're' }, class: 'cell has-column-centered') do %>
+<%= button_to({ controller: 'print/api/tasks', action: 'inner' }, params: { gid: @desk.to_gid.to_s, aim: 'dinner' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'print' %>
-  <span><%= t('space.admin.desks.print.title') %></span>
+  <span><%= t('print.api.tasks.inner.title') %></span>
 <% end %>
 <% if request.variant.include?(:mini_program) %>
   <div
