@@ -10,7 +10,7 @@
   <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= button_to({ action: 'print' }, class: 'cell has-column-centered', form: { data: { action: 'click->weui-actionsheet#close' } }) do %>
+<%= button_to({ controller: 'print/xx/printers', action: 'print' }, params: { gid: @desk.to_gid.to_s, aim: 're' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'print' %>
   <span><%= t('space.admin.desks.print.title') %></span>
 <% end %>
