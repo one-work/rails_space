@@ -22,7 +22,7 @@ module Space
         pr.text "订餐电话：#{'0717-6788808'}"
         pr.text "#{Time.current.to_fs(:wechat)}"
       when 'dinner'
-        pr.bar(height: 20)
+        pr.dash(height: 20)
         pr.qrcode(product_url, x: 20, y: 10, cell_width: 10)
         pr.text(name, x: 320, scale: 2)
         pr.middle_text('扫码点餐', x: 320)
