@@ -23,9 +23,9 @@ module Space
         pr.text "#{Time.current.to_fs(:wechat)}"
       when 'dinner'
         pr.dash(height: 20)
-        pr.qrcode(product_url, x: 20, y: 10, cell_width: 10)
-        pr.text(name, x: 320, scale: 2)
-        pr.middle_text('扫码点餐', x: 320)
+        pr.qrcode_right(product_url)
+        pr.text(name, x: 320)
+        pr.text_big_center('扫码点餐', x: 320)
       when 'xxx'
         pr.text code
         pr.qrcode_right(product_url)
