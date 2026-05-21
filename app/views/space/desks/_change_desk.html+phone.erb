@@ -1,4 +1,4 @@
-<%= link_to({ controller: '/factory/productions', desk_id: model.id }, class: 'cell has-column-centered') do %>
+<%= link_to({ controller: params.fetch(:con, '/factory/productions'), desk_id: model.id }, class: 'cell has-column-centered') do %>
   <strong><%= model.name %></strong>
   <span class="text-grey"><%= model.code %></span>
 <% end %>
