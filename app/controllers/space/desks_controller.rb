@@ -13,7 +13,11 @@ module Space
       q_params = {}
       q_params.merge! default_params
 
-      @desks = @station.desks.default_where(q_params).order(id: :desc).page(params[:page])
+      if @station
+        @desks = @station.desks.default_where(q_params).order(id: :desc).page(params[:page])
+      else
+        @desks = Desk.default_where(q_params).order(id: :desc).page(params[:page])
+      end
     end
 
     def show
@@ -21,7 +25,7 @@ module Space
 
     private
     def set_station
-      @station = Station.find params[:station_id]
+      @station = Station.find_by id: params[:station_id]
     end
 
   end

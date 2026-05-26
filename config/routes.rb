@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       end
     end
     resources :desks, only: [] do
+      collection do
+        post :change
+      end
       member do
         get :qrcode
       end
