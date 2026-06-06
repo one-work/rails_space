@@ -78,6 +78,7 @@ module Space
         'count' => orders.count,
         'unreceived_amount' => orders.where(state: 'init').sum(:unreceived_amount)
       )
+      self.save
     end
 
   end
