@@ -13,7 +13,8 @@ module Space
       belongs_to :room
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
-      has_many :trade_items, class_name: 'Trade::Item', dependent: :nullify
+      has_many :trade_items, class_name: 'Trade::Item'
+      has_many :orders, class_name: 'Trade::Order'
 
       before_save :sync_from_room, if: -> { room_id_changed? }
     end
@@ -70,6 +71,13 @@ module Space
           debug: organ.debug_enabled
         )
       end
+    end
+
+    def reset_counters!
+      self.counters.merge!(
+        'count' => orders.count,
+        'unreceived_amount' => orders.where(state: 'init').sum(:unreceived_amount)
+      )
     end
 
   end
