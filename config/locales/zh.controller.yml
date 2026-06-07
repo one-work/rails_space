@@ -20,8 +20,6 @@ zh:
           title: 房间
         all:
           title: 房间
-        print_data:
-          title: 打印
       grids:
         index:
           title: 货架
@@ -30,7 +28,3 @@ zh:
           title: 桌台
         all:
           title: 桌台
-        print:
-          title: 打印
-        print_all:
-          title: 打印订单
