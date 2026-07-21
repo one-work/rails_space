@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   namespace :space, defaults: { business: 'space' } do
     resources :grids, only: [] do
       member do
