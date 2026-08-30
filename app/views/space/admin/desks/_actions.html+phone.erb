@@ -10,7 +10,15 @@
   <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= button_to({ controller: 'print/admin/home', action: 'inner' }, params: { gid: @desk.to_gid.to_s, aim: 'dinner' }, class: 'cell has-column-centered') do %>
+<%=
+  button_to(
+    { controller: 'print/admin/home', action: 'inner' },
+    params: { gid: @desk.to_gid.to_s, aim: 'dinner' },
+    id: 'print-button',
+    data: { controller: 'print-pos' },
+    class: 'cell has-column-centered'
+  ) do
+%>
   <%= svg_tag 'print' %>
   <span><%= t('print.admin.home.inner.title') %></span>
 <% end %>
