@@ -6,9 +6,13 @@
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
-<%= link_to({ action: 'show' }, class: 'cell has-column-centered') do %>
+<%= button_to({ action: 'show' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
+<% end %>
+<%= button_to({ action: 'qrcode' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'qrcode' %>
+  <span><%= t('.qrcode.title') %></span>
 <% end %>
 <%=
   button_to(
@@ -31,7 +35,7 @@
     class="cell has-column-centered"
   >
     <%= svg_tag 'share' %>
-    <span>分享</span>
+    <span>分享小程序</span>
   </div>
 <% else %>
   <div
@@ -45,6 +49,6 @@
     class="cell has-column-centered"
   >
     <%= svg_tag 'share' %>
-    <span>分享</span>
+    <span>分享下单</span>
   </div>
 <% end %>

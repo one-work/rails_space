@@ -1,0 +1,2 @@
+<%= turbo_stream.remove 'modal_grids' %>
+<%= turbo_stream.append_body partial: 'qrcode', layout: 'modal_show', locals: { model: @desk } %>

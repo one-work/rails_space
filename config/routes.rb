@@ -40,9 +40,7 @@ Rails.app.routes.draw do
           end
           resources :desks do
             member do
-              get :print_data
-              post :print
-              post :print_all
+              post :qrcode
             end
           end
         end
