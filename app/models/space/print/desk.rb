@@ -6,15 +6,16 @@ module Space
       case aim
       when 'order'
         pr.text_big_center "#{organ.name}"
+        pr.text '台账单'
         pr.dash
-        pr.text "#{self.class.human_attribute_name(:name)}：#{name}"
+        pr.text_big "#{self.class.human_attribute_name(:name)}：#{name}"
         pr.dash
 
         pr.text '已下单（已支付）：'
         pr.dash
         paid = 0
         paids = []
-        orders.where(state: 'init', payment_status: 'paid').each do |order|
+        orders.where(state: 'init', payment_status: 'all_paid').each do |order|
           paid += order.amount
           order.items.each do |item|
             paids << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
