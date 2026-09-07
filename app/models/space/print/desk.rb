@@ -7,16 +7,19 @@ module Space
 
       case aim
       when 'order'
-        pr.text_big "#{organ.name}"
-        pr.break_line
+        pr.text_big_center "#{organ.name}"
+        pr.dash
         pr.text "#{self.class.human_attribute_name(:name)}：#{name}"
-        pr.text '已下单：'
-        orders.where(state: 'init').each do |order|
+        pr.dash
+        pr.text '已下单（未支付）：'
+        cols = []
+        orders.where(state: 'init', payment_status: 'unpaid').each do |order|
           total += order.amount
           order.items.each do |item|
-            pr.text(" #{item.good_name} #{item.number.to_human} x #{item.single_price.to_money.to_s}") if item.good
+            cols << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
           end
         end
+        pr.table_3(cols: cols)
         pr.break_line
         pr.text "合计：#{total.to_money.to_s}"
         pr.break_line
