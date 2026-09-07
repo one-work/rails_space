@@ -52,6 +52,7 @@ module Space
       Rails.app.routes.url_for(
         controller: 'factory/productions',
         desk_id: id,
+        dispatch: 'dine',
         host: room.station.organ.host
       )
     end
