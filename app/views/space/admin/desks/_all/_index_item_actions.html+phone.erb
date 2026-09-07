@@ -3,7 +3,7 @@
     <%= yield %>
   </div>
   <div class="media-right as-centered">
-    <%= link_to({ controller: 'factory/agent/productions', desk_id: model.id }, class: 'button is-success') do %>
+    <%= link_to({ controller: 'factory/agent/productions', desk_id: model.id, dispatch: 'dine' }, class: 'button is-success') do %>
       <span>点餐</span>
     <% end %>
     <%= link_to({ controller: 'trade/admin/desk/orders', desk_id: model.id }, class: 'button is-info flex-direction-column') do %>
