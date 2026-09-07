@@ -12,6 +12,7 @@ module Space
         pr.text "#{self.class.human_attribute_name(:name)}：#{name}"
         pr.dash
         pr.text '已下单（未支付）：'
+        pr.dash
         cols = []
         orders.where(state: 'init', payment_status: 'unpaid').each do |order|
           total += order.amount
@@ -21,6 +22,7 @@ module Space
         end
         pr.table_3(cols: cols)
         pr.break_line
+        pr.dash
         pr.text "合计：#{total.to_money.to_s}"
         pr.break_line
         organ.print_note.to_s.split("\n").each do |note|
