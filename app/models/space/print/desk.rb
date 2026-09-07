@@ -6,7 +6,7 @@ module Space
       case aim
       when 'order'
         pr.text_big_center "#{organ.name}"
-        pr.text '台账单'
+        pr.text_center '台账单'
         pr.dash
         pr.text_big "#{self.class.human_attribute_name(:name)}：#{name}"
         pr.dash
