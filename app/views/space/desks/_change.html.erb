@@ -1,5 +1,5 @@
 <div class="fixed-grid has-3-cols">
   <div class="grid gap-2">
-    <%= render partial: 'change_desk', collection: @desks, as: :model %>
+    <%= render partial: 'space_change_desk', collection: @desks, as: :model, locals: { con: 'factory/agent/productions' } %>
   </div>
 </div>

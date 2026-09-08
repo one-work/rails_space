@@ -6,7 +6,7 @@
 <% else %>
   <%=
     link_to(
-      { controller: params.fetch(:con, '/factory/productions'), desk_id: model.id },
+      { controller: defined?(con) ? con : '/factory/productions', desk_id: model.id },
       data: { turbo_action: 'replace' },
       class: 'cell has-column-centered'
     ) do
