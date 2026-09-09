@@ -78,6 +78,7 @@ module Space
     def reset_counters!
       self.counters.merge!(
         'count' => orders.count,
+        'undo' => orders.where(state: ['init']).count,
         'unreceived_amount' => orders.where(state: 'init').sum(:unreceived_amount)
       )
       self.save
