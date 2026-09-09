@@ -11,6 +11,7 @@ zh:
         width: 宽度
         length: 长度
         height: 高度
+        people: 人数
       space/station:
         area_id: 所属区域
         detail: 站点详情
