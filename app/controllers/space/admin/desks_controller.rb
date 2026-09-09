@@ -40,7 +40,8 @@ module Space
         :code,
         :width,
         :length,
-        :height
+        :height,
+        :people
       )
     end
 

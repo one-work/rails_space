@@ -1,17 +1,19 @@
 <% if model.id.to_s == params[:desk_id] %>
-  <div class="cell has-column-centered">
+  <div class="cell has-column-centered button is-primary">
     <strong><%= model.name %></strong>
-    <span class="text-grey"><%= model.code %></span>
+    <span class="size-7"><%= model.people %>人</span>
   </div>
 <% else %>
   <%=
     link_to(
       { controller: defined?(con) ? con : '/factory/productions', desk_id: model.id },
       data: { turbo_action: 'replace' },
-      class: 'cell has-column-centered'
+      class: 'cell button is-outlined is-primary has-column-centered'
     ) do
   %>
     <strong><%= model.name %></strong>
-    <span class="text-grey"><%= model.code %></span>
+    <% if model.people %>
+      <span class="size-7 text-grey"><%= model.people %>人</span>
+    <% end %>
   <% end %>
 <% end %>

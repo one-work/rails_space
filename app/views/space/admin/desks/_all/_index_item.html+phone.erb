@@ -1,2 +1,7 @@
 <p><%= model.name %></p>
-<p class="text-grey"><%= model.code %></p>
+<% if model.code.present? %>
+  <p class="text-grey"><%= model.code %></p>
+<% end %>
+<% if model.people.present? %>
+  <p class="text-grey"><%= model.people %>人</p>
+<% end %>

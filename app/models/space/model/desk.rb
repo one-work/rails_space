@@ -8,6 +8,7 @@ module Space
       attribute :width, :integer
       attribute :height, :integer
       attribute :length, :integer
+      attribute :people, :integer
       attribute :counters, :json, default: {}
 
       belongs_to :room
