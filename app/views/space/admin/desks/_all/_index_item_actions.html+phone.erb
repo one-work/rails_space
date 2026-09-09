@@ -6,12 +6,12 @@
     <%=
       link_to(
         { controller: 'trade/admin/desk/orders', desk_id: model.id },
-        class: "button #{model.counters['unreceived_amount'].to_d > 0 ? 'is-danger' : 'is-warning'} flex-direction-column"
+        class: "button #{model.counters['undo'].to_i > 0 ? 'is-danger' : 'is-warning'} flex-direction-column"
       ) do
     %>
       <p>
         <span>待结算：</span>
-        <span><%= model.counters['unreceived_amount'].to_money.format.html_safe %></span>
+        <span><%= model.counters['undo'].to_i %>订单</span>
       </p>
     <% end %>
     <%= link_to({ controller: 'factory/agent/productions', desk_id: model.id, dispatch: 'dine' }, class: 'button is-success') do %>
