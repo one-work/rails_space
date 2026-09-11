@@ -17,7 +17,11 @@
 <%=
   button_to(
     { controller: 'print/admin/home', action: 'inner' },
-    params: { gid: @desk.to_gid.to_s, aim: 'dinner' },
+    params: {
+      gid: @desk.to_gid.to_s,
+      aim: 'dinner',
+      type: 'cpcl'
+    },
     id: 'print-button',
     data: { controller: 'print-pos' },
     class: 'cell has-column-centered'
