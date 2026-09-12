@@ -58,7 +58,7 @@ module Space
         pr.dash
         total = 0
         cols = []
-        orders.where(state: 'init', payment_status: 'unpaid').each do |order|
+        orders.where(state: 'init').each do |order|
           total += order.amount
           order.items.each do |item|
             cols << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
