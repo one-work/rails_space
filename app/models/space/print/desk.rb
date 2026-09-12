@@ -56,6 +56,7 @@ module Space
         pr.text_big_center "#{organ.name}"
         pr.text_center '台账单'
         pr.dash
+        total = 0
         cols = []
         orders.where(state: 'init', payment_status: 'unpaid').each do |order|
           total += order.amount
