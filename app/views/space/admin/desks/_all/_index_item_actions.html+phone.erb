@@ -9,10 +9,7 @@
         class: "card-footer-item #{model.counters['undo'].to_i > 0 ? 'is-danger' : 'is-warning'}"
       ) do
     %>
-      <p>
-        <span>待结算：</span>
-        <span><%= model.counters['undo'].to_i %>订单</span>
-      </p>
+      <span><%= model.counters['undo'].to_i %>订单</span>
     <% end %>
     <%= link_to({ controller: 'factory/agent/productions', desk_id: model.id, dispatch: 'dine' }, class: 'card-footer-item') do %>
       <span>点餐</span>
