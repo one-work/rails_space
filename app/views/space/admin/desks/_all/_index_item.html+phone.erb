@@ -7,4 +7,7 @@
     <span class="tag"><%= model.people %>人</span>
   <% end %>
 </p>
-<p></p>
+<p>
+  <span>待结算金额：</span>
+  <span><%= model.counters['unreceived_amount'].to_money.format.html_safe %></span>
+</p>
