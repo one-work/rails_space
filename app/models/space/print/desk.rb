@@ -6,7 +6,7 @@ module Space
       case aim
       when 'order'
         pr.text_big_center "#{organ.name}"
-        pr.text_center '台账单'
+        pr.text_center '预结单'
         pr.dash
         pr.text_big "#{self.class.human_attribute_name(:name)}：#{name}"
         pr.dash
@@ -52,9 +52,18 @@ module Space
         pr.qrcode_right(product_url)
         pr.text(name)
         pr.text('扫码点餐')
-      when 'xxx'
-        pr.text code
-        pr.qrcode_right(product_url)
+      when 'checklist'
+        pr.text_big_center "#{organ.name}"
+        pr.text_center '台账单'
+        pr.dash
+        cols = []
+        orders.where(state: 'init', payment_status: 'unpaid').each do |order|
+          total += order.amount
+          order.items.each do |item|
+            cols << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
+          end
+        end
+        pr.table_3(cols: cols)
       end
     end
 
