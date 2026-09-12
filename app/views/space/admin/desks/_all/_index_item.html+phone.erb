@@ -1,7 +1,10 @@
-<p><%= model.name %></p>
-<% if model.code.present? %>
-  <p class="text-grey"><%= model.code %></p>
-<% end %>
-<% if model.people.present? %>
-  <p class="text-grey"><%= model.people %>人</p>
-<% end %>
+<p>
+  <strong><%= model.name %></strong>
+  <% if model.code.present? %>
+    <span class="tag"><%= model.code %></span>
+  <% end %>
+  <% if model.people.present? %>
+    <span class="tag"><%= model.people %>人</span>
+  <% end %>
+</p>
+<p></p>
