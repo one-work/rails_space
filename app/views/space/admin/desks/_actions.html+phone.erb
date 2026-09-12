@@ -14,22 +14,6 @@
   <%= svg_tag 'qrcode' %>
   <span><%= t('.qrcode.title') %></span>
 <% end %>
-<%=
-  button_to(
-    { controller: 'print/admin/home', action: 'inner' },
-    params: {
-      gid: @desk.to_gid.to_s,
-      aim: 'dinner',
-      type: 'cpcl'
-    },
-    id: 'print-button',
-    data: { controller: 'print-pos' },
-    class: 'cell has-column-centered'
-  ) do
-%>
-  <%= svg_tag 'print' %>
-  <span><%= t('print.admin.home.inner.title') %></span>
-<% end %>
 <% if request.variant.include?(:mini_program) %>
   <div
     data-controller="mini-program"

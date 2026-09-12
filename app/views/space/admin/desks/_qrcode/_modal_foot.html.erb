@@ -1,0 +1,18 @@
+<footer class="modal-card-foot">
+  <%=
+    button_to(
+      { controller: 'print/admin/home', action: 'inner' },
+      params: {
+        gid: @desk.to_gid.to_s,
+        aim: 'dinner',
+        type: 'cpcl'
+      },
+      id: 'print-button',
+      data: { controller: 'print-pos' },
+      class: 'button is-rounded is-primary'
+    ) do
+  %>
+    <%= svg_tag 'print' %>
+    <span><%= t('print.admin.home.inner.title') %></span>
+  <% end %>
+</footer>
