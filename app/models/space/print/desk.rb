@@ -21,7 +21,7 @@ module Space
             paids << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
           end
         end
-        pr.table(cols: paids)
+        pr.table(headers: { '品名' => 16, '单价' => 6, '数量' => 6, '小计' => 6 }, cols: paids)
         pr.dash
         pr.text "合计（已支付）：#{paid.to_money.to_s}"
         pr.dash
@@ -36,7 +36,7 @@ module Space
             cols << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
           end
         end
-        pr.table(cols: cols)
+        pr.table(headers: { '品名' => 16, '单价' => 6, '数量' => 6, '小计' => 6 }, cols: cols)
         pr.break_line
         pr.dash
         pr.text "合计（未支付）：#{total.to_money.to_s}"
