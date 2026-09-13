@@ -2,4 +2,6 @@
   <%= render partial: 'index_item', layout: 'index_item_actions', collection: @desks, as: :model %>
 <% end %>
 
+<%= turbo_stream_from "desk_count_#{current_organ.id}" %>
+
 <%= paginate @desks %>

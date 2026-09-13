@@ -17,7 +17,7 @@ module Space
         "desk_count_#{organ_id}",
         action: :update,
         target: "ordered_count_#{desk_id}",
-        content: desk_brothers.status_ordered.count
+        content: desk.counters.fetch('undo')
       )
       send_notice_to_desk
     end
