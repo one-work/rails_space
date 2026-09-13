@@ -6,7 +6,7 @@
     <%=
       link_to(
         { controller: 'trade/admin/desk/orders', desk_id: model.id },
-        class: "card-footer-item #{model.counters['undo'].to_i > 0 ? 'is-danger' : 'is-warning'}"
+        class: "card-footer-item #{model.counters['undo'].to_i > 0 ? 'text-danger' : 'text-warning'}"
       ) do
     %>
       <span><%= model.counters['undo'].to_i %>订单</span>
