@@ -16,6 +16,8 @@ module Space
       r = unreceived_amount - unreceived_amount_before_last_save
       if state == 'done' && state_before_last_save != 'done'
         sr = -1
+      elsif state == 'closed' && state_before_last_save != 'closed'
+        sr = -1
       else
         sr = 0
       end
