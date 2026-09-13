@@ -54,17 +54,17 @@ module Space
         pr.text('扫码点餐')
       when 'checklist'
         pr.text_big_center "#{organ.name}"
-        pr.text_center '台账单'
+        pr.text_center '桌台划菜单'
         pr.dash
         total = 0
         cols = []
         orders.where(state: 'init').each do |order|
           total += order.amount
           order.items.each do |item|
-            cols << [item.good_name, item.single_price.to_money.to_s, item.number.to_human, item.amount.to_money.to_s]
+            cols << [item.good_name, item.number.to_human]
           end
         end
-        pr.table(cols: cols)
+        pr.table_big(headers: { '品名' => 24, '数量' => 12 }, cols: cols)
       end
     end
 
