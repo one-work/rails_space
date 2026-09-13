@@ -11,3 +11,4 @@
   <span>待结算金额：</span>
   <span><%= model.counters['unreceived_amount'].to_money.format.html_safe %></span>
 </p>
+<p id="order_new_<%= model.id %>" class="text-danger"></p>

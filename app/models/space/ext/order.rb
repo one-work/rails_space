@@ -9,6 +9,7 @@ module Space
       after_save :update_counters_to_desk, if: -> { desk_id.present? && (['unreceived_amount', 'state'] & saved_changes.keys).present? }
       after_create :increment_counts_to_desk, if: -> { desk_id.present? }
       after_destroy :decrement_counts_to_desk, if: -> { desk_id.present? }
+      after_commit :send_new_order_to_desk, on: [:create], if: -> { desk }
     end
 
     def update_counters_to_desk
@@ -40,6 +41,15 @@ module Space
     def decrement_counts_to_desk
       return unless desk
       desk.update_json_counter(count: -1)
+    end
+
+    def send_new_order_to_desk
+      broadcast_action_to(
+        "desk_count_#{organ_id}",
+        action: :update,
+        target: "order_new_#{desk_id}",
+        content: '有一个新增订单！'
+      )
     end
 
   end
