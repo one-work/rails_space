@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-left">
-    <%= image_tag model.logo.variant(resize_to_limit: [150, 150]), class: 'image is-64x64' if model.logo.attached? %>
+    <%= image_tag model.logo.variant(resize_to_limit: [150, 150]), class: 'image is-radius is-64x64' if model.logo.attached? %>
   </div>
   <div class="media-content">
     <span class="weui-media-box__title"><%= model.name %></span>
