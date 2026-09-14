@@ -12,7 +12,7 @@ module Space
       attribute :counters, :json, default: {}
 
       belongs_to :room
-      belongs_to :organ, class_name: 'Org::Organ', optional: true
+      belongs_to :organ, class_name: 'Org::Organ', counter_cache: true, optional: true
 
       has_many :trade_items, class_name: 'Trade::Item'
       has_many :orders, class_name: 'Trade::Order'
