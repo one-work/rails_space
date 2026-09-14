@@ -65,6 +65,8 @@ module Space
           end
         end
         pr.table_big(headers: { '品名' => 24, '数量' => 12 }, cols: cols)
+        pr.dash
+        pr.text "打印时间：#{Time.current.to_fs(:wechat)}"
       end
     end
 
