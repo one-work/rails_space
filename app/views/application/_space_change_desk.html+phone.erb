@@ -1,7 +1,9 @@
 <% if model.id.to_s == params[:desk_id] %>
   <div class="cell has-column-centered button is-primary">
     <strong><%= model.name %></strong>
-    <span class="size-7"><%= model.people %>人</span>
+    <% if model.people %>
+      <span class="size-7"><%= model.people %>人</span>
+    <% end %>
   </div>
 <% else %>
   <%=
