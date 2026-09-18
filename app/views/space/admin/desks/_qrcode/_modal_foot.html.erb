@@ -15,4 +15,8 @@
     <%= svg_tag 'print' %>
     <span><%= t('print.admin.home.inner.title') %></span>
   <% end %>
+  <%= link_to({ controller: 'trade/my/desk/orders', desk_id: @desk.id }, class: 'button is-rounded is-primary') do %>
+    <%= svg_tag 'share' %>
+    <span>点单</span>
+  <% end %>
 </footer>
