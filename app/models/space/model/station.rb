@@ -32,9 +32,5 @@ module Space
       )
     end
 
-    def qrcode_product_url
-      QrcodeUtil.data_url(product_url)
-    end
-
   end
 end

@@ -17,7 +17,7 @@ zh:
         detail: 站点详情
         buildings_count: 楼宇数
         rooms_count: 房间数
-        qrcode_product_url: 产品链接二维码
+        product_url: 产品链接二维码
       space/room:
         floor: 楼层
         enter_url: 访问链接

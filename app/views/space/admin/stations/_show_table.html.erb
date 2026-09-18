@@ -11,6 +11,6 @@
   <dd><%= @station.detail %></dd>
 </div>
 <div>
-  <dt><%= Space::Station.human_attribute_name(:qrcode_product_url) %></dt>
-  <dd><%= image_tag @station.qrcode_product_url %></dd>
+  <dt><%= Space::Station.human_attribute_name(:product_url) %></dt>
+  <dd><%= image_tag QrcodeUtil.data_url(@station.product_url), class: 'image' %></dd>
 </div>

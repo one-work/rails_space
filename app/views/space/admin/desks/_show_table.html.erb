@@ -8,5 +8,5 @@
 </div>
 <div>
   <dt><%= Space::Desk.human_attribute_name(:enter_url) %></dt>
-  <dd><%= image_tag @desk.qrcode_product_url %></dd>
+  <dd><%= image_tag QrcodeUtil.data_url(@desk.product_url), class: 'image' %></dd>
 </div>

@@ -58,10 +58,6 @@ module Space
       )
     end
 
-    def qrcode_product_url
-      QrcodeUtil.data_url(product_url)
-    end
-
     def share_info
       r = {
         url: product_url,
