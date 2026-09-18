@@ -20,6 +20,10 @@ module Space
       before_save :sync_from_room, if: -> { room_id_changed? }
     end
 
+    def ordered?(ids)
+      (trade_items.where(good_type: 'Factory::Production').status_ordered.pluck(:good_id) & ids).present?
+    end
+
     def sync_from_room
       self.organ_id = room.organ_id
     end
