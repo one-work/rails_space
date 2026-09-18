@@ -51,10 +51,9 @@ module Space
 
     def product_url
       Rails.app.routes.url_for(
-        controller: 'factory/productions',
+        controller: 'trade/my/desk/orders',
         desk_id: id,
-        dispatch: 'dine',
-        host: room.station.organ.host
+        host: organ.host
       )
     end
 
