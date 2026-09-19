@@ -42,16 +42,13 @@ module Space
         pr.text "合计（未支付）：#{total.to_money.to_s}"
         pr.break_line
         pr.dash
-
         organ.print_note.to_s.split("\n").each do |note|
           pr.text note
         end
         pr.text "#{Time.current.to_fs(:wechat)}"
       when 'dinner'
-        pr.dash(height: 20)
-        pr.qrcode_right(product_url)
-        pr.text(name)
-        pr.text('扫码点餐')
+        pr.qrcode_center(product_url)
+        pr.text_big_center(name)
       when 'checklist'
         pr.text_big_center "#{organ.name}"
         pr.text_center '桌台划菜单'
