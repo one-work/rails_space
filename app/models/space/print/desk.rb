@@ -47,8 +47,8 @@ module Space
         end
         pr.text "#{Time.current.to_fs(:wechat)}"
       when 'dinner'
-        pr.qrcode_center(product_url)
-        pr.text_big_center(name)
+        pr.qrcode_center(product_url, y: 0)
+        #pr.text_big_center(name)
       when 'checklist'
         pr.text_big_center "#{organ.name}"
         pr.text_center '桌台划菜单'
