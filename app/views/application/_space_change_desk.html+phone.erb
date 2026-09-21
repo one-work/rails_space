@@ -1,6 +1,6 @@
 <% if model.id.to_s == params[:desk_id] %>
   <div class="cell has-column-centered button is-primary">
-    <strong><%= model.name %></strong>
+    <strong class="is-wrap"><%= model.name %></strong>
     <% if model.people %>
       <span class="size-7"><%= model.people %>人</span>
     <% end %>
@@ -13,7 +13,7 @@
       class: 'cell button is-outlined is-primary has-column-centered'
     ) do
   %>
-    <strong><%= model.name %></strong>
+    <strong class="is-wrap"><%= model.name %></strong>
     <% if model.people %>
       <span class="size-7 text-grey"><%= model.people %>人</span>
     <% end %>
