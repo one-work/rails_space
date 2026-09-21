@@ -10,7 +10,7 @@
     link_to(
       { controller: defined?(con) ? con : '/factory/productions', desk_id: model.id },
       data: { turbo_action: 'replace' },
-      class: 'cell button is-outlined is-primary has-column-centered'
+      class: 'cell has-column-centered button is-outlined is-primary'
     ) do
   %>
     <strong class="is-wrap"><%= model.name %></strong>
