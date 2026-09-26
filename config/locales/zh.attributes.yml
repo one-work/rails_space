@@ -27,3 +27,5 @@ zh:
         height: 高度
         floor: 层数
         enter_url: 访问链接
+      trade/order:
+        desk_id: 桌号
