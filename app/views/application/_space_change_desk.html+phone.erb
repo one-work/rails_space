@@ -8,7 +8,7 @@
 <% else %>
   <%=
     link_to(
-      { controller: defined?(con) ? con : '/factory/productions', desk_id: model.id },
+      { controller: defined?(con) ? con : '/factory/productions', desk_id: model.id, dispatch: 'dine' },
       data: { turbo_action: 'replace' },
       class: 'cell has-column-centered button is-outlined is-primary'
     ) do
