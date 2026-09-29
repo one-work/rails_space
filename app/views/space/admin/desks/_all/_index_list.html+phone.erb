@@ -1,11 +1,17 @@
 <div id="tbody" class="mt-3">
-  <div class="media as-boxed">
-    <div class="media-content">未绑定桌台</div>
-    <div class="media-right">
-      <%= link_to({ controller: 'trade/admin/orders', action: 'no_desk' }, class: 'button is-info flex-direction-column') do %>
+  <div class="card as-narrow">
+    <div class="card-content">
+      <p>预点餐、自取</p>
+      <p class="size-7 text-grey">未绑定桌台</p>
+    </div>
+    <div class="card-footer">
+      <%= link_to({ controller: 'trade/admin/orders', action: 'no_desk' }, class: 'card-footer-item') do %>
         <p>
-          <span>待结算：</span>
+          <span>查看订单</span>
         </p>
+      <% end %>
+      <%= link_to({ controller: 'factory/agent/productions', dispatch: 'fetch' }, class: 'card-footer-item') do %>
+        <span>点餐</span>
       <% end %>
     </div>
   </div>
