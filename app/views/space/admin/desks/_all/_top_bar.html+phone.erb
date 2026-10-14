@@ -1,0 +1,6 @@
+<%= render layout: 'top_bar_left' do %>
+  <div class="bar-title"><%= t('.title') %></div>
+  <%= button_to({ action: 'new' }, form: { class: 'right' }) do %>
+    <%= svg_tag 'plus', class: 'icon text-link' %>
+  <% end %>
+<% end %>
